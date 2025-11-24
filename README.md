@@ -1,2 +1,2 @@
 # portfolio
-Displayed my personal portfolio.
+Displayed my portfolio.
