@@ -1,2 +1,139 @@
-Hello from Koushik Saha.
-Glad you're here..
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html{
+	scroll-behavior: smooth;
+	min-height: 100vh;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	color: #444444;
+	font-family: "Roboto", sans-serif;
+}
+@keyframes myAnimation{
+	from {background-color: lightyellow;}
+	to {background-color: whhite;}
+}
+body{
+	/*animation-name: myAnimation;*/
+	/*animation-duration: 4s;*/
+	background-color: #cccccc;
+	background-image: url("https://abhioneapp.adityabirlahealth.com/assets/Img/background_img_abhi.png");
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+}
+
+.container2{
+	display: flex;
+	flex-direction: column;
+
+	padding: 0px 200px;
+}
+
+.container1{
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin-bottom: 2em;
+	z-index: 1000;
+}
+
+nav ul{
+	display: flex;
+	background-color: #f0f0f090;
+	height: 3.2rem;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	list-style: none;
+	backdrop-filter: blur(4px);
+}
+
+nav ul li{
+	
+}
+
+nav ul li a{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #444444;
+}
+
+nav ul li a:hover{
+	
+}
+
+.card{
+	height: 100vh;
+	scroll-margin-top: 10vh;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	background-color: #f0f0f090;
+	backdrop-filter: blur(10px);
+	padding: 24px 32px;
+	border-radius: 16px;
+	/*translate: -100px 0px;*/
+	opacity: 0;
+	transition: 800ms ease;
+	
+}
+
+.card.show{
+	opacity: 1;
+	/*translate: 0px 0px;*/
+}
+
+
+.card_header{
+	font-weight: bold;
+	font-size: 24px;
+}
+
+</style>
+<script src="./src/main.js"></script>
+<title>Koushik Saha</title>
+</head>
+<body onLoad=onLoad()>
+	<div class="container" id="container">
+		<div class="container1" id="container1">
+			<nav class="header">
+			<ul>
+				<li class="ul_menu_item"><a href="#home">Home</a></li>
+				<li class="ul_menu_item"><a href="#about">About</a></li>
+				<li class="ul_menu_item"><a href="#project">Project</a></li>
+				<li class="ul_menu_item"><a href="#skill">Skills</a></li>
+				<li class="ul_menu_item"><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		</div>
+		<div class="container2" id="container2">
+			<section class="card" id="home">
+				<div class="card_header" id="card_header"></div>
+			</section>
+			<section class="card" id="about">
+				<div class="card_header" id="card_header"></div>
+			</section>
+			<section class="card" id="project">
+				<div class="card_header" id="card_header"></div>
+			</section>
+			<section class="card" id="skill">
+				<div class="card_header" id="card_header"></div>
+			</section>
+			<section class="card" id="contact">
+				<div class="card_header" id="card_header"></div>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
