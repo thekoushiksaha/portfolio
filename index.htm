@@ -12,15 +12,20 @@ html{
 	color: #444444;
 	font-family: "Roboto", sans-serif;
 }
-@keyframes myAnimation{
-	from {background-color: lightyellow;}
-	to {background-color: whhite;}
+@keyframes dpAnimation{
+	from {opacity: 0}
+	to {animation-delay: 4s; opacity:1}
 }
+
+@keyframes displayIconAnimation{
+	from {opacity: 0}
+	to {opacity: 1}
+}
+
 body{
-	/*animation-name: myAnimation;*/
-	/*animation-duration: 4s;*/
 	background-color: #cccccc;
-	background-image: url("https://abhioneapp.adityabirlahealth.com/assets/Img/background_img_abhi.png");
+	/*background-image: url("https://plus.unsplash.com/premium_vector-1761422865384-e4e44fc247a3?q=80&w=1151&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");*/
+	/*background-image: url("src/background_img.png");*/
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
@@ -35,8 +40,9 @@ body{
 .container2{
 	display: flex;
 	flex-direction: column;
-
 	padding: 0px 200px;
+	/*background-color: powderblue;*/
+	margin-top: -4vh;
 }
 
 .container1{
@@ -78,7 +84,7 @@ nav ul li a:hover{
 	scroll-margin-top: 10vh;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	/*gap: 10px;*/
 	background-color: #f0f0f090;
 	backdrop-filter: blur(10px);
 	padding: 24px 32px;
@@ -98,6 +104,83 @@ nav ul li a:hover{
 .card_header{
 	font-weight: bold;
 	font-size: 24px;
+}
+.card.show .intro{
+	position: fixed;
+	left: 16vh;
+	top: 16vh;
+	background-color: lightgreen;
+	margin: 16px;
+	padding: 16px;
+	border-radius: 8px;
+	box-shadow: #999999 2px 2px 4px;
+	z-index: 1000;
+}
+.card.show .dp{
+	background-image: url("https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png");
+	background-size: cover;
+	background-position: center center;
+	margin-top: -16vh;
+	background-color: #f0f0f0;
+	height: 16em;
+	width: 16em;
+	border-radius: 16em;
+	/*animation-name: dpAnimation;*/
+	/*animation-duration: 4s;*/
+}
+
+.display_icon{
+	
+}
+
+.card.show .display_icon{
+	position: fixed;
+	background-color: powderblue;
+	height: 4em;
+	width: 4em;
+	border-radius: 4em;
+	margin: 4px;
+	box-shadow: #999999 2px 2px 4px;
+	animation: displayIconAnimation 2s;
+	
+}
+
+.card.show #display_icon1{
+	top: 8em;
+	right: 14em;
+}
+
+.card.show #display_icon2{
+	top: 15em;
+	right: 12em;
+}
+
+.card.show #display_icon3{
+	top: 22em;
+	right: 14em;
+}
+
+#home{
+	align-items: center;
+	justify-content: center;
+}
+
+.right_panel{
+	position: fixed;
+	z-index: 1000;
+	right: 8px;
+	top: 48vh;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.right_panel div{
+	background-color: #f0f0f0;
+	height: 1em;
+	width: 1em;
+	border-radius: 1em;
+	
 }
 
 </style>
@@ -119,7 +202,17 @@ nav ul li a:hover{
 		</div>
 		<div class="container2" id="container2">
 			<section class="card" id="home">
-				<div class="card_header" id="card_header"></div>
+				<div class="intro" id="intro">
+					<p>Hello! I'm Koushik.</p>
+					<p>Glad, you're here.</p>
+				
+				</div>
+				<div class="card_header" id="card_header">
+					<div class="dp" id="dp"></div>
+				</div>
+				<div class="display_icon" id="display_icon1"></div>
+				<div class="display_icon" id="display_icon2"></div>
+				<div class="display_icon" id="display_icon3"></div>
 			</section>
 			<section class="card" id="about">
 				<div class="card_header" id="card_header"></div>
@@ -133,6 +226,19 @@ nav ul li a:hover{
 			<section class="card" id="contact">
 				<div class="card_header" id="card_header"></div>
 			</section>
+			<div></div>
+			<div class="right_panel" id="right_panel">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="left_panel" id="left_panel">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 		</div>
 	</div>
 </body>
